@@ -34,7 +34,7 @@ function start() {
 
 function rememberMyFilms() {
     for (let i = 0; i < 2; i++) {
-        const filmName = prompt('Один из последних просмотренных фильмов?', '');
+        const filmName = prompt('Один из последних просмотренных фильмов?', '').trim();
         const filmRating = prompt('На сколько оцените его?', '');
 
         if (filmName !== null && filmRating !== null && filmName !== '' && filmRating !== '' && filmName.length < 50) {
