@@ -149,7 +149,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
    // window.addEventListener('scroll', showModalByScroll);
 
-   // =============== CLASSES FOR CARDS ===============
+   // =============== CARDS IN MENU ===============
 
    class MenuCard {
       constructor(src, alt, title, descr, price, parentSelector, ...classes) {
@@ -296,5 +296,11 @@ window.addEventListener('DOMContentLoaded', () => {
          closeModal();
       }, 4000);
    }
+
+   // =============== OTHER ===============
+
+   fetch('http://localhost:3000/menu')
+      .then(data => data.json())
+      .then(res => console.log(res));
 
 });
