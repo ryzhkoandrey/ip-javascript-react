@@ -5,6 +5,7 @@ import modal from './modules/modal';
 import slider from './modules/slider';
 import tabs from './modules/tabs';
 import timer from './modules/timer';
+
 import { openModal } from './modules/modal';
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -12,9 +13,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
    calc();
    cards();
-   forms();
+   forms('form', modalTimerId);
    modal('[data-modal]', '.modal', modalTimerId);
-   slider();
-   tabs();
-   timer();
+   slider({
+      container: '.offer__slider',
+      slide: '.offer__slide',
+      nextArrow: '.offer__slider-next',
+      prevArrow: '.offer__slider-prev',
+      totalCounter: '#total',
+      currentCounter: '#current',
+      wrapper: '.offer__slider-wrapper',
+      field: '.offer__slider-inner',
+
+   });
+   tabs('.tabheader__item', '.tabcontent', '.tabheader__items', 'tabheader__item_active');
+   timer('.timer', '2025-03-15');
 });
